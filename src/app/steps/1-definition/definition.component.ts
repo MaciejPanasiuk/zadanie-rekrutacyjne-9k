@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DEFINITION_TOOLTIP_MESSAGES, ERROR_MESSAGES, PORTAL_LIST, TUTORIAL_TEXT, TYPE_LIST } from 'src/app/Data/formConst';
-import { FormStorageService } from 'src/app/services/form-storage/form-storage.service';
+import { DEFINITION_TOOLTIP_MESSAGES, ERROR_MESSAGES, PORTAL_LIST, TUTORIAL_TEXT, TYPE_LIST } from './../../Data/formConst';
+import { FormStorageService } from './../../services/form-storage/form-storage.service';
 
 @Component({
   selector: 'app-definition',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PromotionDefinition } from 'src/app/Interfaces/Interfaces';
+import { PromotionDefinition } from './../../Interfaces/Interfaces';
 
 @Injectable({
   providedIn: 'root'

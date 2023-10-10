@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { PromotionDefinition } from 'src/app/Interfaces/Interfaces';
+import { PromotionDefinition } from './../../Interfaces/Interfaces';
 import { PromotionStorageService } from '../../services/promotion-storage/promotion-storage.service';
 import { v4 as uuidv4 } from 'uuid';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteConfirmationComponent } from 'src/app/delete-confirmation/delete-confirmation.component';
+import { DeleteConfirmationComponent } from './../../delete-confirmation/delete-confirmation.component';
 import { Router } from '@angular/router';
-import { FormStorageService } from 'src/app/services/form-storage/form-storage.service';
-import { DEFAULT_FORM_VALUES, ERROR_MESSAGES } from 'src/app/Data/formConst';
+import { FormStorageService } from './../../services/form-storage/form-storage.service';
+import { DEFAULT_FORM_VALUES, ERROR_MESSAGES } from './../../Data/formConst';
 
 @Component({
   selector: 'app-summary',
