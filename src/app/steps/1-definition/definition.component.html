@@ -1,0 +1,215 @@
+<form class="definition-container" [formGroup]="formData.definitionForm" s>
+  <div class="left-column">
+    <div class="section-header"><span class="heading">Description</span><span class="is-required"><b>*</b> is required</span></div>
+    <div class="textField-group-1">
+      <div class="input-container">
+        <input
+          id="Marketing-Name"
+          formControlName="marketingName"
+          placeholder="Marketing name"
+          type="text"
+        />
+        <span class="required"></span>
+        <div>
+        <mat-icon [matTooltip]="toolTipMessages.marketingName" 
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="input-container">
+        <input
+          id="Technical-Name"
+          formControlName="technicalName"
+          placeholder="Technical name"
+          type="text"
+        /><div>
+        <mat-icon [matTooltip]="toolTipMessages.technicalName"  
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="input-container">
+        <textarea
+          id="description"
+          formControlName="description"
+          rows="6"
+          placeholder="Description"
+          type="text"
+        ></textarea><div>
+        <mat-icon [matTooltip]="toolTipMessages.description"  
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+    </div>
+      <h3>Catalog promotional tutorial:</h3>
+      <p *ngFor="let paragraph of tutorialText" >
+        {{paragraph}}
+      </p>
+  </div>
+  <div class="right-column">
+    <div class="section-header"><span class="heading">Conditions</span><span class="is-required"><b>*</b> is required</span></div>
+    <div class="textField-group-2">
+      <div class="input-container">
+        <select
+          id="Portal"
+          class="portal-select"
+          formControlName="selectedPortal"
+          placeholder="Portal"
+        >
+          <option *ngFor="let portal of portalList" [value]="portal">
+            {{ portal }}
+          </option>
+        </select>
+        <span class="required-select"></span><div>
+        <mat-icon [matTooltip]="toolTipMessages.portal" 
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="input-container">
+        <select
+          id="Type"
+          class="type-select"
+          formControlName="selectedType"
+          placeholder="Type"
+        >
+          <option *ngFor="let type of typeList" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        <span class="required-select"></span><div>
+        <mat-icon [matTooltip]="toolTipMessages.type" 
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="input-container">
+        <input
+          [readOnly]="true"
+          id="Benefit-amount"
+          formControlName="benefitAmount"
+          placeholder="Benefit amount"
+          type="text"
+          class="benefit-amount"
+          
+        /><div>
+        <mat-icon [matTooltip]="toolTipMessages.benefitAmount" 
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+    </div>
+    <div class="textField-group-3">
+      <div class="date-container">
+        <div class="date-imputs">
+          <mat-form-field class="date-picker">
+            <input
+              matInput
+              [matDatepicker]="startDate"
+              (click)="startDate.open()"
+              placeholder="Start date"
+              formControlName="startDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="startDate"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+          </mat-form-field>
+          <span class="required-date"></span>
+          <mat-form-field class="date-picker">
+            <input
+              matInput
+              [matDatepicker]="finishDate"
+              (click)="finishDate.open()"
+              placeholder="Finish date"
+              formControlName="finishDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="finishDate"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #finishDate></mat-datepicker>
+          </mat-form-field>
+        </div><div>
+        <mat-icon [matTooltip]="toolTipMessages.start_finishDate" 
+        matTooltipPosition="below"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="radio-container">
+        <div class="radio-inputs">
+          <div class="radio-with-Label">
+            <input
+              type="radio"
+              id="Bus"
+              name="priceCondition"
+              value="BusinessConditions"
+              formControlName="priceCondition"
+            />
+            <label for="Bus">Business Conditions</label>
+          </div>
+          <div class="radio-with-Label">
+            <input
+              type="radio"
+              id="Best"
+              name="priceCondition"
+              value="BestPrice100%"
+              formControlName="priceCondition"
+            />
+            <label for="Best">Best Price 100%</label>
+          </div>
+        </div><div>
+        <mat-icon [matTooltip]="toolTipMessages.conditionsAndPriceRadio"  
+        matTooltipPosition="left"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+      <div class="checkbox-container">
+        <div class="checkbox-input">
+          <div>
+            <input
+              type="checkbox"
+              id="other-promos"
+              name="other-promos"
+              [value]="true"
+              formControlName="isOtherPromos"
+            />
+            <label for="other-promos"> Connect with other promotions</label>
+          </div>
+        </div>
+        <mat-icon [matTooltip]="toolTipMessages.connectWithOtherPromotions" 
+        matTooltipPosition="left"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon>
+      </div>
+      <div class="checkbox-container">
+        <div class="checkbox-input">
+          <input
+            type="checkbox"
+            id="back-promo"
+            name="back-promo"
+            [value]="false"
+            formControlName="isBackPromo"
+          />
+          <label for="back-promo"> Back promotion</label>
+        </div><div>
+        <mat-icon [matTooltip]="toolTipMessages.backPromotions"  
+        matTooltipPosition="left"
+        matTooltipShowDelay="200"
+        matTooltipClass="tooltip"
+          >info</mat-icon></div>
+      </div>
+    </div>
+  </div>
+</form>

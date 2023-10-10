@@ -1,0 +1,40 @@
+
+  <div *ngIf="!isAdded && !isEditing" class="button-container">
+  <button class="add-button" (click)="handleAddPromotion()">
+    <mat-icon>add</mat-icon>
+    <div>Add</div>
+  </button>
+  <div class="validation-error" [ngStyle]="{visibility:isFormValid?'hidden':'visible'}">{{currentErrorMessage}}</div></div>
+
+
+  <div *ngIf="!isAdded && isEditing" class="button-container">
+  <button class="add-button" (click)="handleConfirmUpdate()">
+    <mat-icon>update</mat-icon>
+    <div>Update</div>
+  </button>
+  <div class="validation-error" [ngStyle]="{visibility:isFormValid?'hidden':'visible'}">{{currentErrorMessage}}</div>
+</div>
+
+<div *ngIf="isAdded" class="promotions-container">
+  <span class="order-field">No.</span>
+  <span class="name-field">Nazwa</span>
+  <span class="actions-field">Actions</span>
+  <ng-container *ngFor="let promotion of promotionList; index as i">
+    <span class="data-field">{{ i + 1 }}</span>
+    <span class="data-field">{{ promotion.marketingName }}</span>
+    <span class="data-field data-field-icons">
+      <span
+        class="material-symbols-outlined"
+        (click)="handleEditPromotion(promotion.id)"
+      >
+        edit_square
+      </span>
+      <mat-icon
+        mat-raised-button
+        (click)="openDialog(promotion.id, promotion.marketingName)"
+        >clear</mat-icon
+      >
+    </span>
+  </ng-container>
+</div>
+

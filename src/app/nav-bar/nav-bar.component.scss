@@ -1,0 +1,68 @@
+.sidenav {
+    width: 20vw;
+    z-index: 1;
+    margin-left: 0.8rem;
+    background: #eee;
+    overflow-x: hidden;
+    list-style: none;
+    counter-reset: listnum;
+
+  }
+  
+  .navLink {
+    padding-left:2.5rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: #2196F3;
+    display: flex;
+    align-items: center;
+    border-right:0.3rem solid white;
+    border-bottom:0.3rem solid white;
+    counter-increment: listnum;
+    text-decoration: none;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  }
+  .navlink-disabled{
+    opacity:0.5;
+    cursor:not-allowed;
+    color:gray;
+  }
+    .navLink::before {
+    content: counter(listnum);
+    background:grey;
+    border-radius: 100%;
+    color: white;
+    width: 3.1rem;
+    height: 3.1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    display: inline-flex;
+    align-items:center;
+    justify-content: center;
+    position:absolute;
+    left:0.6rem;
+  }
+  .navLink-active {
+    border-right:0.3rem solid #eee;
+  }
+  .navLink-active::before {
+    background: rgb(145, 47, 47);
+  }
+  
+  .navLink:not(.navlink-disabled):hover {
+    color: #064579;
+  }
+  .mat-icon {
+    margin-top: 0.3rem;
+    font-size: 1.2rem;
+    color:rgb(168, 26, 26);
+  }
+  ::ng-deep .tooltip {
+    font-size: 1rem;
+
+
+  }

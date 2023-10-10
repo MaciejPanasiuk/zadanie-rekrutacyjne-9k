@@ -1,0 +1,63 @@
+<div class="sidenav">
+  <a routerLink="/definition" routerLinkActive="navLink-active" class="navLink"
+    >DEFINITION</a>
+  <a
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/chooseProducts'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >CHOOSE PRODUCTS</a>
+  <a
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/bonusProducts'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    delay=""
+    >EXCLUDE PRODUCTS</a>
+  <a
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/excludeProducts'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >BONUS PRODUCTS
+    <mat-icon [matTooltip]="toolTipMessages.bonusProducts" 
+    matTooltipPosition="after"
+    matTooltipShowDelay="200"
+    matTooltipClass="tooltip"
+      >info</mat-icon>
+    </a>
+  <a 
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/productsLimits'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >PRODUCTS LIMITS       
+    <mat-icon [matTooltip]="toolTipMessages.productsLimits" 
+    matTooltipPosition="after"
+    matTooltipShowDelay="200"
+    matTooltipClass="tooltip"
+      >info</mat-icon>
+    </a >
+  <a
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/chooseClients'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >CHOOSE CLIENTS</a>
+  <a
+    [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+    [routerLink]="formData.areNamesEmpty?null:'/excludeClients'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >EXCLUDE CLIENTS</a>
+  <a
+   [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+   [routerLink]="formData.areNamesEmpty?null:'/clientsLimits'"
+    routerLinkActive="navLink-active"
+    class="navLink"
+    >CLIENTS LIMITS</a>
+  <a 
+  [ngClass]="formData.areNamesEmpty?'navlink-disabled':''"
+  [routerLink]="formData.areNamesEmpty?null:'/summary'" routerLinkActive="navLink-active" class="navLink"
+    >SUMMARY</a>
+</div>
